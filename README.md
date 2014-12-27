@@ -23,9 +23,9 @@ By building it by yourself, you can change some options in the `config.json` fil
 ## How to launch it?
 You can simply launch it as any other docker image but don't forget to expose and redirect ports, e.g.: you can use the port `1234`:
 
-    docker run -d -p 1234:8388 -P --name shadowsocks-c matttbe/shadowsocks-c
+    docker run -d -p 1234:8388 -P --name shadowsocks-c matttbe/shadowsocks-c -c /etc/shadowsocks-libev/config.json
 
 You can also add [options](https://github.com/madeye/shadowsocks-libev/#usage), e.g.
 
-    docker run -d -p 8388:8388 -P --name shadowsocks-c matttbe/shadowsocks-c -m aes-128-cfb
+    docker run -d -p 8388:8388 -P --name shadowsocks-c matttbe/shadowsocks-c -s 0.0.0.0 -p 8388 -l 1080 -k barfoo -m aes-128-cfb
 
