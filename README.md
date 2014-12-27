@@ -14,7 +14,9 @@ If you don't want to build it, simply pull the image:
 
 By building it by yourself, you can change some options in the `config.json` file (e.g. if you don't want that the password will appear when launching `ps` command.
 
-    git clone 
+    git clone https://github.com/matttbe/docker-shadowsocks-c.git
+    cd docker-shadowsocks-c
+    vim config.json ## if needed
     docker build -t matttbe/docker-shadowsocks-c .
 
 
