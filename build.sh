@@ -1,1 +1,1 @@
-sudo docker build -t matttbe/shadowsocks-c .
+docker build -t matttbe/shadowsocks-c .

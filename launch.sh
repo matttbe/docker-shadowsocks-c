@@ -1,1 +1,2 @@
-sudo docker run -d -p 1234:8388 -P --name shadowsocks matttbe/shadowsocks-c
+[ "$1" = "" ] && PORT=8388 || PORT=$1
+docker run -d -p $PORT:8388 -P --name shadowsocks-c matttbe/shadowsocks-c
