@@ -10,6 +10,10 @@ If you don't want to build it, simply pull the image:
 
     docker pull matttbe/docker-shadowsocks-c
 
+## How to use your own config.json file?
+
+Simply launch (`docker run`) the docker with this option: `-v /PATH/TO/YOUR/config.json:/etc/shadowsocks-libev/config.json:ro`
+
 ## How to build?
 
 By building it by yourself, you can change some options in the `config.json` file (e.g. if you don't want that the password will appear when launching `ps` command.
