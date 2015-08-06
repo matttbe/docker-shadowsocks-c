@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --force-yes git build-essential autocon
 RUN git clone https://github.com/shadowsocks/shadowsocks-libev.git
 WORKDIR shadowsocks-libev
 RUN ./configure --prefix=/usr && make && make install
-COPY debian/config.json /etc/shadowsocks-libev/config.json
+RUN cp debian/config.json /etc/shadowsocks-libev/config.json
 
 # Note: we need to clearly expose the port number.
 # Run it: thanks to entrypoint, we can add options when launching the container
