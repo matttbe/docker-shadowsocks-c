@@ -6,7 +6,9 @@ FROM       ubuntu:14.04
 MAINTAINER Matthieu Baerts "matttbe@gmail.com"
 
 # Install ShadownSocks from apt repo
-RUN printf "deb http://shadowsocks.org/debian wheezy main" >> /etc/apt/sources.list
+RUN apt-get update && apt-get install -y --force-yes wget
+RUN wget -O- https://shadowsocks.org/debian/1D27208A.gpg | apt-key add -
+RUN printf "deb http://shadowsocks.org/ubuntu trusty main" >> /etc/apt/sources.list
 RUN apt-get update && apt-get install -y --force-yes shadowsocks-libev
 
 # easier to configure and integrate passwords
